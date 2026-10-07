@@ -60,4 +60,19 @@ public class restOption {
                 return Response.status(404).build();
             }
     }
+
+    @PUT
+    @Path("{semestre}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public  Response getAllOption(@QueryParam("semestre") int semestre ){
+        List<Option>l = new ArrayList<Option>();
+        if(semestre == 0){
+            l=optB.getListeOptions();
+            return Response.status(404).build();}
+        else{
+            l=optB.getOptionsBySemestre(semestre);}
+
+        return Response.status(200).entity(l).build();
+
+    }
 }

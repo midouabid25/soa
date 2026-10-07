@@ -14,6 +14,7 @@ public class Option {
 
     public Option(Option optionByCode) {}
 
+    public Option(){}
     public Option(int codeOption, String libelle, String domaine, String responsable, int credits, int semestre, int capacite) {
         this.codeOption = codeOption;
         this.libelle = libelle;
